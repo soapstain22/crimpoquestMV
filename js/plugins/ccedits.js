@@ -1,23 +1,20 @@
-/*:
- * @plugindesc at sideview battle, only display item/skill names.
- * @author Sasuke KANNAZUKI
- *
- * @param displayAttack
- * @desc Whether to display normal attack. 1:yes 0:no
- * @default 0
- *
- * @param position
- * @desc Skill name display position. 0:left, 1:center
- * @default 1
- *
- * @help This plugin does not provide plugin commands.
- *
- * By not displaying the log and only displaying the skill name,
- * the speed of battle will increase slightly. 
- */
-(function() {
+function givemetheitem(itemid){
+	var parameters = PluginManager.parameters('ItemBook');
+	var item = $dataItems.at(itemid)
+	var commanded = Game_Interpreter.prototype.pluginCommand;
 
-  var parameters = PluginManager.parameters('SimpleMsgSideView');
-  var displayAttack = Number(parameters['displayAttack']) != 0;
-  var position = Number(parameters['position'] || 1);
-})();
+	Game_Interpreter.pluginCommand = function(a, b){
+		_Game_Interpreter_pluginCommand.call(this, item, args);
+		if (item = 'money'){
+			Game_Party.prototype.gainGold(args)
+			ItemGetWindow("Money", args, 40)
+		}
+	}
+	
+}
+function ItemGetWindow(toptext, bottomtext, id){
+	Window_Base.prototype.initialize(screen.availWidth/2,screen.availHeight/2,200,80)
+	Window_Base.prototype.create.call(this)
+	
+	
+}
