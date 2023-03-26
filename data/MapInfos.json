@@ -1,7 +1,6 @@
 [
 null,
 {"id":1,"expanded":true,"name":"intro","order":1,"parentId":0,"scrollX":819,"scrollY":461},
-
 {"id":2,"expanded":true,"name":"chapter 1","order":3,"parentId":79,"scrollX":2594,"scrollY":1562},
 {"id":3,"expanded":true,"name":"home","order":4,"parentId":2,"scrollX":819,"scrollY":461},
 {"id":4,"expanded":false,"name":"store","order":19,"parentId":9,"scrollX":819,"scrollY":461},
@@ -12,7 +11,7 @@ null,
 {"id":9,"expanded":true,"name":"tent","order":18,"parentId":0,"scrollX":819,"scrollY":461},
 {"id":10,"expanded":false,"name":"house2","order":6,"parentId":68,"scrollX":819,"scrollY":461},
 {"id":11,"expanded":true,"name":"chapter2","order":15,"parentId":1,"scrollX":819,"scrollY":461},
-{"id":12,"expanded":true,"name":"swewer","order":21,"parentId":81,"scrollX":2949,"scrollY":1636},
+{"id":12,"expanded":true,"name":"swewer","order":21,"parentId":81,"scrollX":2192,"scrollY":3064},
 {"id":13,"expanded":true,"name":"MAP013","order":22,"parentId":12,"scrollX":1301,"scrollY":1179},
 {"id":14,"expanded":true,"name":"peanut mine","order":31,"parentId":12,"scrollX":1109,"scrollY":1431},
 {"id":15,"expanded":false,"name":"hob tobob","order":23,"parentId":13,"scrollX":819,"scrollY":461},
@@ -31,7 +30,6 @@ null,
 null,
 {"id":29,"expanded":true,"name":"shithouse","order":9,"parentId":2,"scrollX":819,"scrollY":461},
 {"id":30,"expanded":true,"name":"lab","order":36,"parentId":81,"scrollX":819,"scrollY":461},
-
 null,
 null,
 null,
@@ -46,8 +44,6 @@ null,
 null,
 null,
 null,
-
-
 null,
 null,
 null,
@@ -58,11 +54,9 @@ null,
 null,
 null,
 null,
-
 null,
 null,
 {"id":57,"expanded":true,"name":"breakcore","order":24,"parentId":13,"scrollX":819,"scrollY":461},
-
 null,
 null,
 null,
@@ -73,7 +67,6 @@ null,
 null,
 null,
 null,
-
 {"id":68,"expanded":true,"name":"bedroom","order":5,"parentId":3,"scrollX":819,"scrollY":461},
 null,
 null,
@@ -97,5 +90,4 @@ null,
 {"id":88,"expanded":true,"name":"MAP088","order":28,"parentId":13,"scrollX":819,"scrollY":461},
 null,
 {"id":90,"expanded":false,"name":"mold","order":27,"parentId":16,"scrollX":1541,"scrollY":1419}
-
 ]
