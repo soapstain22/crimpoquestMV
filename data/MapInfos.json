@@ -1,7 +1,7 @@
 [
 null,
 {"id":1,"expanded":true,"name":"intro","order":1,"parentId":0,"scrollX":817,"scrollY":455.5},
-{"id":2,"expanded":true,"name":"chapter 1","order":3,"parentId":79,"scrollX":2739,"scrollY":1671.5},
+{"id":2,"expanded":true,"name":"chapter 1","order":3,"parentId":79,"scrollX":1001,"scrollY":878.5},
 {"id":3,"expanded":true,"name":"home","order":4,"parentId":2,"scrollX":817,"scrollY":455.5},
 {"id":4,"expanded":false,"name":"store","order":21,"parentId":9,"scrollX":817,"scrollY":455.5},
 {"id":5,"expanded":true,"name":"castle","order":13,"parentId":2,"scrollX":817,"scrollY":455.5},
