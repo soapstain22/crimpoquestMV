@@ -6571,7 +6571,7 @@ Game_CharacterBase.prototype.updateAnimation = function() {
 };
 
 Game_CharacterBase.prototype.animationWait = function() {
-    return (9 - this.realMoveSpeed()) * 3;
+    return (8 - this.realMoveSpeed()) * 3;
 };
 
 Game_CharacterBase.prototype.updateAnimationCount = function() {
