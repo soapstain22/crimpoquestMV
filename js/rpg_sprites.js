@@ -2426,6 +2426,7 @@ function Spriteset_Battle() {
 }
 
 Spriteset_Battle.prototype = Object.create(Spriteset_Base.prototype);
+
 Spriteset_Battle.prototype.constructor = Spriteset_Battle;
 
 Spriteset_Battle.prototype.initialize = function() {
@@ -2435,6 +2436,7 @@ Spriteset_Battle.prototype.initialize = function() {
 
 Spriteset_Battle.prototype.createLowerLayer = function() {
     Spriteset_Base.prototype.createLowerLayer.call(this);
+
     this.createBackground();
     this.createBattleField();
     this.createBattleback();
