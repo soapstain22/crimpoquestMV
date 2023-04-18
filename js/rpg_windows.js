@@ -116,7 +116,7 @@ Window_Base.prototype.update = function() {
 
 Window_Base.prototype.updateOpen = function() {
     if (this._opening) {
-        this.openness += 32;
+        this.openness += 64;
         if (this.isOpen()) {
             this._opening = false;
         }
@@ -125,7 +125,7 @@ Window_Base.prototype.updateOpen = function() {
 
 Window_Base.prototype.updateClose = function() {
     if (this._closing) {
-        this.openness -= 32;
+        this.openness -= 64;
         if (this.isClosed()) {
             this._closing = false;
         }
@@ -465,8 +465,8 @@ Window_Base.prototype.drawCharacter = function(characterName, characterIndex, x,
 Window_Base.prototype.drawGauge = function(x, y, width, rate, color1, color2) {
     var fillW = Math.floor(width * rate);
     var gaugeY = y + this.lineHeight() - 8;
-    this.contents.fillRect(x, gaugeY, width, 6, this.gaugeBackColor());
-    this.contents.gradientFillRect(x, gaugeY, fillW, 6, color1, color2);
+    this.contents.fillRect(x, gaugeY, width, 12, this.gaugeBackColor());
+    this.contents.gradientFillRect(x, gaugeY, fillW, 12, color1, color2);
 };
 
 Window_Base.prototype.hpColor = function(actor) {

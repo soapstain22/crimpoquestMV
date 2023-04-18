@@ -544,6 +544,7 @@ Sprite_Battler.prototype.updateAnimation = function() {
 
 Sprite_Battler.prototype.updateDamagePopup = function() {
     this.setupDamagePopup();
+    this.setupHealthBar()
     if (this._damages.length > 0) {
         for (var i = 0; i < this._damages.length; i++) {
             this._damages[i].update();
@@ -597,6 +598,18 @@ Sprite_Battler.prototype.setupDamagePopup = function() {
         this._battler.clearDamagePopup();
         this._battler.clearResult();
     }
+};
+Sprite_Battler.prototype.setupHealthBar = function() {
+        if (!this.hp <= 0){
+
+            var hpbar = new function (){
+                hpbar.x = this.x+this.width;
+                hpbar.y = this.y+this.height;
+                hpbar.drawText(this.hp+ "/" + this.mhp,x,y,this.height,this.width)
+                this.content.drawGauge(100,200,100,200,100,100)
+                this._context.fillRect()
+        }
+    };
 };
 
 Sprite_Battler.prototype.damageOffsetX = function() {
