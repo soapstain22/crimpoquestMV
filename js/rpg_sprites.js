@@ -7,6 +7,7 @@
 //
 // The sprite class with a feature which displays animations.
 
+
 function Sprite_Base() {
     this.initialize.apply(this, arguments);
 }
@@ -544,7 +545,6 @@ Sprite_Battler.prototype.updateAnimation = function() {
 
 Sprite_Battler.prototype.updateDamagePopup = function() {
     this.setupDamagePopup();
-    this.setupHealthBar()
     if (this._damages.length > 0) {
         for (var i = 0; i < this._damages.length; i++) {
             this._damages[i].update();
@@ -598,18 +598,6 @@ Sprite_Battler.prototype.setupDamagePopup = function() {
         this._battler.clearDamagePopup();
         this._battler.clearResult();
     }
-};
-Sprite_Battler.prototype.setupHealthBar = function() {
-        if (!this.hp <= 0){
-
-            var hpbar = new function (){
-                hpbar.x = this.x+this.width;
-                hpbar.y = this.y+this.height;
-                hpbar.drawText(this.hp+ "/" + this.mhp,x,y,this.height,this.width)
-                this.content.drawGauge(100,200,100,200,100,100)
-                this._context.fillRect()
-        }
-    };
 };
 
 Sprite_Battler.prototype.damageOffsetX = function() {
@@ -966,6 +954,10 @@ Sprite_Enemy.prototype.update = function() {
     if (this._enemy) {
         this.updateEffect();
         this.updateStateSprite();
+        //let b = new Sprite_Base()
+        //b.initialize()
+
+        //b.bitmap.drawText(this._enemy.hp.toString(),this._enemy.screenX(),this._enemy.screenY(),300,50,"center")
     }
 };
 
@@ -1492,11 +1484,9 @@ Sprite_Animation.prototype.startHiding = function(duration) {
 // Sprite_Damage
 //
 // The sprite for displaying a popup damage.
-
 function Sprite_Damage() {
     this.initialize.apply(this, arguments);
 }
-
 Sprite_Damage.prototype = Object.create(Sprite.prototype);
 Sprite_Damage.prototype.constructor = Sprite_Damage;
 
