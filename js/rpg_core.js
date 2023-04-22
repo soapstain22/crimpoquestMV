@@ -1533,6 +1533,7 @@ Bitmap.prototype._makeFontNameText = function() {
  */
 Bitmap.prototype._drawTextOutline = function(text, tx, ty, maxWidth) {
     var context = this._context;
+    context.imageSmoothingEnabled = false
     context.strokeStyle = this.outlineColor;
     context.lineWidth = this.outlineWidth;
     context.lineJoin = 'round';
