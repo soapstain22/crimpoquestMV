@@ -182,7 +182,7 @@ Troop 39 ("Finale")
       {"code":0,"indent":0,"parameters":[]}
   Page 2
       {"code":101,"indent":0,"parameters":["creatura",7,0,2]}
-      {"code":401,"indent":0,"parameters":["FREDERICK!"]}
+      {"code":401,"indent":0,"parameters":["FREDethanK!"]}
       {"code":101,"indent":0,"parameters":["creatura",7,0,2]}
       {"code":401,"indent":0,"parameters":["NO"]}
       {"code":0,"indent":0,"parameters":[]}

@@ -14,7 +14,7 @@ Skill 18 filibuster: Damage Formula: 0 + a.mat * 0.1 - b.mdf * 0.1
 Skill 19 soda slam: Damage Formula: 0 + a.atk * 2.8 - b.def * 1.4
 Skill 21 Bad word: Damage Formula: 0 + a.mat * 6.8 - b.mdf * 4.8
 Skill 22 Hickey: Damage Formula: 0 + a.atk * 0.8 - b.def * 0.4
-Skill 23 south american ninja warrior: Damage Formula: a.def * 5 - b.def * 2
+Skill 23 south amethanan ninja warrior: Damage Formula: a.def * 5 - b.def * 2
 Skill 24 weird take: Damage Formula: 0 + a.mat * 0.6 - b.mdf * 0.6
 Skill 25 alienate: Damage Formula: 0 + a.mat * 0.6 - b.mdf * 0.6
 Skill 27 weird little sound: Damage Formula: 0 + a.mat * 0.06 - b.mdf * 0.06
