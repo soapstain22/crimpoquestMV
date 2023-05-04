@@ -884,7 +884,7 @@ Bitmap.prototype.initialize = function(width, height) {
      * @property outlineColor
      * @type String
      */
-    this.outlineColor = 'rgba(0, 0, 0, 0.5)';
+    this.outlineColor = 'rgba(0, 0, 0, 1)';
 
     /**
      * The width of the outline of the text.

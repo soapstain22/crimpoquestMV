@@ -1,6 +1,8 @@
 @font-face {
     font-family: GameFont;
     src: url("trebuc.ttf");
+
+
 }
 
 .IIV::-webkit-media-controls-play-button,
@@ -8,4 +10,5 @@ video::-webkit-media-controls-start-playback-button {
     opacity: 0;
     pointer-events: none;
     width: 5px;
+    image-rendering: crisp-edges;
 }
