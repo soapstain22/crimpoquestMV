@@ -4173,7 +4173,7 @@ Game_Actor.prototype.showRemovedStates = function() {
 };
 
 Game_Actor.prototype.stepsForTurn = function() {
-    return 5;
+    return 10;
 };
 
 Game_Actor.prototype.turnEndOnMap = function() {
