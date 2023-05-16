@@ -1,10 +1,11 @@
 @font-face {
     font-family: GameFont;
-    src: url("trebuc.ttf");
-
-
+    src: url("dos-j-437.ttf");
 }
-
+@font-face {
+    font-family: CrazyFont;
+    src: url("m-c-kids-nes-credits-font.ttf");
+}
 .IIV::-webkit-media-controls-play-button,
 video::-webkit-media-controls-start-playback-button {
     opacity: 0;
