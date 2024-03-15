@@ -20,5 +20,15 @@ null,
 {"id":18,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"weirdquote","switchId":1,"trigger":0},
 {"id":19,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"wolfquote","switchId":1,"trigger":0},
 {"id":20,"list":[{"code":111,"indent":0,"parameters":[1,1,0,0,0]},{"code":101,"indent":1,"parameters":["creatura",6,0,2]},{"code":401,"indent":1,"parameters":["CONTAAAACT!!!!!!!!"]},{"code":0,"indent":1,"parameters":[]},{"code":411,"indent":0,"parameters":[]},{"code":111,"indent":1,"parameters":[1,1,0,1,0]},{"code":101,"indent":2,"parameters":["creatura",6,0,2]},{"code":401,"indent":2,"parameters":["CONTAAAAAAAAACT!!!!!!!!"]},{"code":0,"indent":2,"parameters":[]},{"code":411,"indent":1,"parameters":[]},{"code":111,"indent":2,"parameters":[1,1,0,2,0]},{"code":101,"indent":3,"parameters":["creatura",6,0,2]},{"code":401,"indent":3,"parameters":["CONTACT!"]},{"code":0,"indent":3,"parameters":[]},{"code":411,"indent":2,"parameters":[]},{"code":0,"indent":3,"parameters":[]},{"code":412,"indent":2,"parameters":[]},{"code":0,"indent":2,"parameters":[]},{"code":412,"indent":1,"parameters":[]},{"code":0,"indent":1,"parameters":[]},{"code":412,"indent":0,"parameters":[]},{"code":0,"indent":0,"parameters":[]}],"name":"preload","switchId":1,"trigger":0},
-{"id":21,"list":[{"code":126,"indent":0,"parameters":[6,0,0,1]},{"code":0,"indent":0,"parameters":[]}],"name":"give bananna","switchId":1,"trigger":0}
+{"id":21,"list":[{"code":126,"indent":0,"parameters":[6,0,0,1]},{"code":0,"indent":0,"parameters":[]}],"name":"give bananna","switchId":1,"trigger":0},
+{"id":22,"list":[{"code":101,"indent":0,"parameters":["",0,0,2]},{"code":401,"indent":0,"parameters":["please stop saving files to your local computer"]},{"code":401,"indent":0,"parameters":["it gets reset when you log out"]},{"code":401,"indent":0,"parameters":["use the network tab please"]},{"code":0,"indent":0,"parameters":[]}],"name":"computer_fluff","switchId":1,"trigger":0},
+{"id":23,"list":[{"code":101,"indent":0,"parameters":["",0,0,2]},{"code":401,"indent":0,"parameters":["Dear serf,"]},{"code":401,"indent":0,"parameters":["Please go to the store today and pick up some more "]},{"code":401,"indent":0,"parameters":["energy drinks and some toys to play with in the bath. "]},{"code":0,"indent":0,"parameters":[]}],"name":"fluff 2","switchId":1,"trigger":0},
+{"id":24,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":25,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":26,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":27,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":28,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":29,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":30,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":31,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0}
 ]
