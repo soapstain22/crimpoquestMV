@@ -135,6 +135,7 @@ Window_Base.prototype.updateClose = function() {
 Window_Base.prototype.open = function() {
     if (!this.isOpen()) {
         this._opening = true;
+
     }
     this._closing = false;
 };
