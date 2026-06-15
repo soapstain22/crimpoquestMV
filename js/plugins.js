@@ -6,5 +6,7 @@ var $plugins =
 {"name":"Community_Basic","status":false,"description":"Plugin used to set basic parameters.","parameters":{"cacheLimit":"40","screenWidth":"816","screenHeight":"624","changeWindowWidthTo":"","changeWindowHeightTo":"","renderingMode":"auto","alwaysDash":"off"}},
 {"name":"ItemBook","status":false,"description":"Displays detailed statuses of items.","parameters":{"Unknown Data":"??????","Price Text":"Price","Equip Text":"Equip","Type Text":"Type"}},
 {"name":"ccedits","status":false,"description":"","parameters":{}},
-{"name":"EnemyBars","status":false,"description":"Makes enemy hp bar appear in battle.","parameters":{"High HP Color":"#009900","Medium HP Color":"#ffcc00","Low HP Color":"#ff6600","Critical HP Color":"#ff3300"}}
+{"name":"EnemyBars","status":false,"description":"Makes enemy hp bar appear in battle.","parameters":{"High HP Color":"#009900","Medium HP Color":"#ffcc00","Low HP Color":"#ff6600","Critical HP Color":"#ff3300"}},
+{"name":"NekoGakuen_SteamworksPlus_TransMod","status":true,"description":"Steamworks API+ (Ver 1.1.2)","parameters":{"Steamworks Class":"","Steam AppID":"4773020","Check BuyGame Boolean":"false","Check FullScreen":"true","Check Music Pause":"false","Error Log Class":"","Error BuyGame Title":"未購買此遊戲","Error BuyGame Message":"您尚未在 Steam 上購買本遊戲。","Error BuyGame Button":"前往購買"}},
+{"name":"OrangeGreenworks","status":true,"description":"Steamworks Integration <OrangeGreenworks>","parameters":{}}
 ];
