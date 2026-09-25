@@ -150,6 +150,51 @@ Enemy_Bars.prototype.drawEnemyGauge = function(x, y, width, rate, color) {
 	this.contents.fillRect(x, y, fillW, barHeight, color);
 };
 
+//FUNCTION: whether this enemy's bar should be showing right now
+function isBarVisible(enemy) {
+	var enemyId = enemy._enemyId;
+	var selected = enemy._selected;
+	var turn = (BattleManager._phase === "action" || BattleManager._phase === "turn");
+
+	var enabled = false;
+	var meta = new Array(4);
+	meta[0] = $dataEnemies[enemyId].meta.hpBar
+	meta[1] = $dataEnemies[enemyId].meta.hpBarSelectionOnly
+	meta[2] = $dataEnemies[enemyId].meta.hpBarTurnASelection
+	meta[3] = $dataEnemies[enemyId].meta.hpBarTurnOnly
+
+	if(showAll && !meta[1] && !meta[2] && !meta[3]){
+		enabled = true;
+	}else if(meta[0]){
+		enabled = true;
+	}else if(meta[1] && selected){
+		enabled = true;
+	}else if(meta[2] && (selected || turn)){
+		enabled = true;
+	}else if(meta[3] && turn){
+		enabled = true;
+	}else{
+		enabled = false;
+	}
+
+	//Hidden enemies that have not appeared yet never show a bar
+	if(!enemy.isAppeared()){
+		enabled = false;
+	};
+
+	return enabled && enemy.hp > 0 && enemy.mhp > 0;
+};
+
+//FUNCTION: screen y of the top of the bar
+function barScreenY(enemy) {
+	var spriteHeight = $dataEnemies[enemy._enemyId].battlerHeight || defaultHeight;
+	//The sprite is anchored at the feet, so the head is one height up
+	var y = enemy._screenY - spriteHeight - headGap;
+	//Never let the bar slide off the top of the screen
+	if(y < 1){ y = 1; };
+	return y;
+};
+
 //FUNCTION: draw the hp guage
 Enemy_Bars.prototype.drawBar = function() {
 	if(!$gameTroop){ return; };
@@ -157,55 +202,16 @@ Enemy_Bars.prototype.drawBar = function() {
 	var enemies = $gameTroop.members();
 	for(var i = 0; i < enemies.length; i++){
 		var enemy = enemies[i];
-		var enemyId = enemy._enemyId;
-		var selected = enemy._selected;
-		var turn = (BattleManager._phase === "action" || BattleManager._phase === "turn");
-
-		var enabled = false;
-		var meta = new Array(4);
-		meta[0] = $dataEnemies[enemyId].meta.hpBar
-		meta[1] = $dataEnemies[enemyId].meta.hpBarSelectionOnly
-		meta[2] = $dataEnemies[enemyId].meta.hpBarTurnASelection
-		meta[3] = $dataEnemies[enemyId].meta.hpBarTurnOnly
-
-		if(showAll && !meta[1] && !meta[2] && !meta[3]){
-			enabled = true;
-		}else if(meta[0]){
-			enabled = true;
-		}else if(meta[1] && selected){
-			enabled = true;
-		}else if(meta[2] && (selected || turn)){
-			enabled = true;
-		}else if(meta[3] && turn){
-			enabled = true;
-		}else{
-			enabled = false;
-		}
-
-		//Hidden enemies that have not appeared yet never show a bar
-		if(!enemy.isAppeared()){
-			enabled = false;
-		};
-
-		//Current hp, taken live so states and buffs are accounted for
-		var currentHp = enemy.hp;
-		var maxHp = enemy.mhp;
 		//If the enemy hp is not zero then draw the hp bar
-		if(currentHp > 0 && maxHp > 0 && enabled){
+		if(isBarVisible(enemy)){
 			//Rate is the currnet hp compared to the max hp
-			var rate = currentHp/maxHp;
-			//Size of the battler image, used to find the top of the head
-			var spriteWidth = $dataEnemies[enemyId].battlerWidth || defaultWidth;
-			var spriteHeight = $dataEnemies[enemyId].battlerHeight || defaultHeight;
+			var rate = enemy.hp/enemy.mhp;
 			//Width of the bar
+			var spriteWidth = $dataEnemies[enemy._enemyId].battlerWidth || defaultWidth;
 			var width = barWidth || spriteWidth;
 			var x = enemy._screenX - width / 2;
-			//The sprite is anchored at the feet, so the head is one height up
-			var y = enemy._screenY - spriteHeight - headGap;
-			//Never let the bar slide off the top of the screen
-			if(y < 1){ y = 1; };
 			//Draw the guage
-			this.drawEnemyGauge(x, y, width, rate, this.guageColor(rate));
+			this.drawEnemyGauge(x, barScreenY(enemy), width, rate, this.guageColor(rate));
 		};
 	};
  };
@@ -232,5 +238,25 @@ Sprite_Enemy.prototype.updateFrame = function() {
 		$dataEnemies[this._enemy._enemyId].battlerHeight = this.bitmap.height;
 		$dataEnemies[this._enemy._enemyId].battlerWidth = this.bitmap.width;
 	};
+};
+
+//=============================================================================
+// Alias Sprite_Enemy.updateStateSprite so the state icon sits above the bar
+// instead of being covered by it.
+//=============================================================================
+var copyOfSprite_EnemyupdateStateSprite = Sprite_Enemy.prototype.updateStateSprite;
+Sprite_Enemy.prototype.updateStateSprite = function() {
+	copyOfSprite_EnemyupdateStateSprite.call(this);
+	if(!this._enemy || !isBarVisible(this._enemy)){ return; };
+	var half = Sprite_StateIcon._iconHeight / 2;
+	var barTop = barScreenY(this._enemy);
+	//Icon is centered, so its bottom edge lands 2px above the bar outline
+	var iconY = barTop - 1 - 2 - half;
+	//No room above the bar at the top of the screen, so tuck it underneath
+	if(iconY - half < 0){
+		iconY = barTop + barHeight + 1 + 2 + half;
+	};
+	//Icon position is relative to the sprite, the bar is in screen space
+	this._stateIconSprite.y = iconY - this.y;
 };
 })();
