@@ -8,5 +8,6 @@ var $plugins =
 {"name":"ccedits","status":false,"description":"","parameters":{}},
 {"name":"EnemyBars","status":true,"description":"Overhead enemy hp bars in battle, Runescape style.","parameters":{"Show For All Enemies":"true","Bar Width":"48","Bar Height":"6","Head Gap":"10","Fill Color":"#00c000","Empty Color":"#c00000","Color By HP":"false","High HP Color":"#009900","Medium HP Color":"#ffcc00","Low HP Color":"#ff6600","Critical HP Color":"#ff3300"}},
 {"name":"NekoGakuen_SteamworksPlus_TransMod","status":true,"description":"Steamworks API+ (Ver 1.1.2)","parameters":{"Steamworks Class":"","Steam AppID":"4773020","Check BuyGame Boolean":"false","Check FullScreen":"true","Check Music Pause":"false","Error Log Class":"","Error BuyGame Title":"未購買此遊戲","Error BuyGame Message":"您尚未在 Steam 上購買本遊戲。","Error BuyGame Button":"前往購買"}},
-{"name":"OrangeGreenworks","status":true,"description":"Steamworks Integration <OrangeGreenworks>","parameters":{}}
+{"name":"OrangeGreenworks","status":true,"description":"Steamworks Integration <OrangeGreenworks>","parameters":{}},
+{"name":"AnyTarget","status":true,"description":"Lets a single-target item or skill hit either side.","parameters":{}}
 ];
