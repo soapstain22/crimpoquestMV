@@ -1,7 +1,7 @@
 //=============================================================================
 // EnemyBars.js
 //=============================================================================
-//v1.3
+//v1.4
 /*:
  * @plugindesc Overhead enemy hp bars in battle, Runescape style.
  * @author Jeremy Cannady
@@ -97,30 +97,26 @@ var defaultWidth = 96;
 var defaultHeight = 96;
 
 //=============================================================================
-// Create the enemy hp window that displays all the hp bars
+// Create the enemy hp sprite that displays all the hp bars. It lives in the
+// battlefield with the enemy sprites, so windows, pictures and damage popups
+// draw over it and screen shake moves it with the enemies.
 //=============================================================================
 function Enemy_Bars() {
 	this.initialize.apply(this, arguments);
 };
 
-Enemy_Bars.prototype = Object.create(Window_Base.prototype);
+Enemy_Bars.prototype = Object.create(Sprite.prototype);
 Enemy_Bars.prototype.constructor = Enemy_Bars;
 
-Enemy_Bars.prototype.initialize = function(x, y, width, height) {
-    Window_Base.prototype.initialize.call(this, x, y, width, height);
-    this.deactivate();
-	//Make the window transparent
-	this.opacity = 0;
-};
-
-//No padding so the bars line up with the battler screen coordinates
-Enemy_Bars.prototype.standardPadding = function() {
-	return 0;
+Enemy_Bars.prototype.initialize = function(width, height) {
+    Sprite.prototype.initialize.call(this);
+	this.bitmap = new Bitmap(width, height);
+	this.contents = this.bitmap;
 };
 
 Enemy_Bars.prototype.update = function() {
-    Window_Base.prototype.update.call(this);
-	//Clear the window and re-draw the hp bars
+    Sprite.prototype.update.call(this);
+	//Clear the bitmap and re-draw the hp bars
     this.contents.clear();
     this.drawBar();
 };
@@ -217,14 +213,14 @@ Enemy_Bars.prototype.drawBar = function() {
  };
 
 //=============================================================================
-// Alias the Scene_Battle createAllWindows to add the hp window
+// Alias the Spriteset_Battle createLowerLayer to add the hp bars on top of the
+// battlers but under everything else
 //=============================================================================
-var battleWindows = Scene_Battle.prototype.createAllWindows;
-Scene_Battle.prototype.createAllWindows = function() {
-	battleWindows.call(this)
-	//Add the hp window to the battle scene
-	this.Bar = new Enemy_Bars(0, 0, Graphics.width, Graphics.height);
-	this.addChild(this.Bar);
+var copyOfSpriteset_BattlecreateLowerLayer = Spriteset_Battle.prototype.createLowerLayer;
+Spriteset_Battle.prototype.createLowerLayer = function() {
+	copyOfSpriteset_BattlecreateLowerLayer.call(this);
+	this._enemyBars = new Enemy_Bars(Graphics.boxWidth, Graphics.boxHeight);
+	this._battleField.addChild(this._enemyBars);
 };
 
 //=============================================================================
